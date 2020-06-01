@@ -18,7 +18,8 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
-  const args = msg.content.split(/ +/);
+  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+  const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
 
