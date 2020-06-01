@@ -9,6 +9,7 @@ Object.keys(botCommands).map(key => {
 });
 
 const TOKEN = process.env.TOKEN;
+const prefix = process.env.prefix;
 
 bot.login(TOKEN);
 
