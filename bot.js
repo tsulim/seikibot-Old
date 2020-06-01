@@ -14,7 +14,7 @@ bot.login(TOKEN);
 
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
-  bot.user.setActivity("your every move", "WATCHING");
+  bot.user.setActivity("your every move", {type: "WATCHING"});
 });
 
 bot.on('message', msg => {
