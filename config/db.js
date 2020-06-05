@@ -1,6 +1,6 @@
 module.exports = {
-    host: 'localhost',
-    database: 'seikibot',
-    username: 'seikiAdmin',
-    password: 'S3ik1b0t'
+    Host: process.env.Host,
+    Database: process.env.Database,
+    User: process.env.User,
+    Password: process.env.Password
 }

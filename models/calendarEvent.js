@@ -14,6 +14,9 @@ const CalendarEvent = db.define('calendarEvent', {
     eventDescription: {
         type: Sequelize.STRING,
     },
+    channelID: {
+        type: Sequelize.STRING,
+    }
 });
 
 module.exports = CalendarEvent;
