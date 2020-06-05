@@ -50,7 +50,6 @@ bot.on('message', msg => {
         var date = args[1];
         var start = args[2];
 		var description = args[3];
-		var serverid = msg.guild.id;
 		var channelid = msg.channel.id;
 		
 		if (description == undefined){
