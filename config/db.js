@@ -1,6 +1,10 @@
+require('dotenv').config();
+
+// mysql://bf9056c3653dfd:f647489f@us-cdbr-east-05.cleardb.net/heroku_49053729671cf50?reconnect=true
+
 module.exports = {
-    Host: process.env.Host,
-    Database: process.env.Database,
-    User: process.env.User,
-    Password: process.env.Password
+    host: process.env.host || 'us-cdbr-east-05.cleardb.net',
+    database: process.env.database || 'heroku_49053729671cf50',
+    user: process.env.user || 'bf9056c3653dfd',
+    password: process.env.password || 'f647489f'
 }
