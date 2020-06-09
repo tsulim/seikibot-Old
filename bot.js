@@ -102,7 +102,7 @@ bot.on('ready', () => {
 	console.info(`Logged in as ${bot.user.tag}!`);
 	bot.user.setActivity("your every move", { type: "WATCHING" });
 	// Connects to MySQL database
-    seikiDB.setUpDB(false); // To set up database with new tables set(True)
+    seikiDB.setUpDB(true); // To set up database with new tables set(True)
 });
 
 bot.on('message', msg => {
