@@ -13,7 +13,7 @@ module.exports = {
             description: "Still working on the bot but here are the working and available commands for you :D",
             fields: [{
                 name: "Available Commands",
-                value: "`help` `create`",
+                value: "`help` `create` `listevent",
             }],
             timestamp: new Date(),
             footer: {
