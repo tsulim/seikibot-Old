@@ -11,10 +11,13 @@ const CalendarEvent = db.define('calendarEvent', {
     eventStart: {
         type: Sequelize.TIME,
     },
-    eventDescription: {
+    channelID: {
         type: Sequelize.STRING,
     },
-    channelID: {
+    serverID: {
+        type: Sequelize.STRING,
+    },
+    status: {
         type: Sequelize.STRING,
     }
 });
