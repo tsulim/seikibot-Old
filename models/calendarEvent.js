@@ -3,7 +3,7 @@ const db = require('../config/DBConfig');
 
 const CalendarEvent = db.define('calendarEvent', {
     eventName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
     },
     eventDate: {
         type: Sequelize.DATEONLY,
