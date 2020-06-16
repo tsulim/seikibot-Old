@@ -21,7 +21,6 @@ const prefix = process.env.prefix;
 function CheckEvents(){
     // var today = new moment().format()
     console.log("Checking Reminders...");
-    moment().locale('en-sg')
     var currentDate = moment().format('YYYY-MM-DD')
     // today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var currentTime = moment().format('HH:mm').split(':')
@@ -145,7 +144,7 @@ bot.on('message', msg => {
         // !/\d\d-\d\d-\d\d\d\d/.test(date)
 
         if (!moment(date, moment.ISO_8601).isValid()|| !/\d\d:\d\d/.test(start)) {
-          msg.channel.send("Please follow this date and time format \n Date : `` MM-DD-YYYY`` \n Start Time : ``HH:MM`` ");
+          msg.channel.send("Please follow this date and time format \n Date : `` YYYY-MM-DD`` \n Start Time : ``HH:MM`` ");
 
         } else {
             var today = new Date();
