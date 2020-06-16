@@ -21,6 +21,7 @@ const prefix = process.env.prefix;
 function CheckEvents(){
     // var today = new moment().format()
     console.log("Checking Reminders...");
+    moment().locale('en-sg')
     var currentDate = moment().format('YYYY-MM-DD')
     // today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var currentTime = moment().format('HH:mm').split(':')
@@ -106,7 +107,9 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
-	if (msg.author.bot) return;
+    if (msg.author.bot) return;
+    
+    if (msg.channel.type === "dm") return;
 
 	if (msg.content.includes(bot.user.id)) {
         // Send acknowledgement message
