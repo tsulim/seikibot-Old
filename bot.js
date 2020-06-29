@@ -109,7 +109,35 @@ bot.on('ready', () => {
 bot.on('message', msg => {
     if (msg.author.bot) return;
     
-    if (msg.channel.type === "dm") return;
+    if (msg.channel.type === "dm" && msg.author.id === "516303284873461760") {
+        if (msg.author.id === "516303284873461760") {
+            if (msg.content.startsWith('-classreminder')) {
+                const args = msg.content.slice(14).split(",");
+                const title = args.shift();
+                const reminderinfo = args.shift();
+                const reminderchannel = bot.channels.find(channel => channel.id === "719812478577410059");
+                reminderchannel.send({
+                    embed: {
+                        color: 342145,
+                        title: title,
+                        fields: [{
+                            name: "Info",
+                            value: reminderinfo
+                            }
+                        ],
+                        timestamp: new Date(),
+                        footer: {
+                            icon_url: msg.author.avatarURL,            
+                        }
+                    }
+                });
+                return;
+            } else {
+                msg.reply("Hey! A command!");
+                return;
+            }
+        } else return;
+    };
 
 	if (msg.content.includes(bot.user.id)) {
         // Send acknowledgement message
@@ -138,9 +166,7 @@ bot.on('message', msg => {
         //Regex Expressions    
     
         //var dateREG = new RegExp("\d\d-\d\d-\d\d\d\d");
-        var dateREG = "/\d\d\d\d-\d\d-\d\d/";
         //var startdurationREG = new RegExp("\d\d:\d\d");
-        var startdurationREG = "/\d\d:\d\d/";
         // moment(invalid, moment.ISO_8601).isValid()
         // !/\d\d-\d\d-\d\d\d\d/.test(date)
 
