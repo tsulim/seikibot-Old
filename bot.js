@@ -261,6 +261,23 @@ bot.on('message', msg => {
             console.log(err)
             msg.channel.send('There are no events in this server!')
         })
+    } else if (commandName == "choose") {
+        var choices = []
+        var choice = []
+        args.forEach(arg => {
+            if (arg == "|") {
+                choicestring = choice.join(' ')
+                console.log(choicestring)
+                choices.push(choicestring);
+                choice = []
+            } else {
+                choice.push(arg)
+                console.log(choice)
+            }
+        })
+        console.log(choices)
+        result = choices[Math.floor(Math.random() * choices.length)];
+        msg.channel.send("<:PikaThink:682148895945785345> | <@" + msg.author.id + ">, I choose " + result)
     } else {
 		try {
 			bot.commands.get(commandName).execute(msg, args);
