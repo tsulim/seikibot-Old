@@ -38,6 +38,22 @@ module.exports = {
                     text: "© Example",
                 }            
             }});
+        } else if (args[0] == "choose") {
+            msg.channel.send({embed: {
+                color: 0x0080ff,
+                title: "Help",
+                description: "Makes a choice for you. Split your options with |",
+                fields: [{
+                    name: "Usage:",
+                    value: "`-choose one | two`",
+                    },
+                ],
+                timestamp: new Date(),
+                footer: {
+                    icon_url: "https://cdn.discordapp.com/avatars/516303284873461760/e1a7397683aed74e04b46e2be2c03913.png?size=1024",
+                    text: "© Example",
+                }            
+            }});
         } else {
             // msg.channel.send("m - minutes, s - seconds, d - days.\n\t{@User}");
             msg.channel.send({embed: {
@@ -50,7 +66,7 @@ module.exports = {
                 description: "Still working on the bot but here are the working and available commands for you :D",
                 fields: [{
                     name: "Available Commands",
-                    value: "`help` `create` `listevent`",
+                    value: "`help` `create` `listevent` `choose`",
                 }],
                 timestamp: new Date(),
                 footer: {
