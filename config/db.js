@@ -1,6 +1,5 @@
-if (process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
-}
+require('dotenv').config();
+
 // mysql://bf9056c3653dfd:f647489f@us-cdbr-east-05.cleardb.net/heroku_49053729671cf50?reconnect=true
 
 module.exports = {
